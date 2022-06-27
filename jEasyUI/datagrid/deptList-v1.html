@@ -11,7 +11,7 @@
     <script>
       function deptList(){
         $('#dg-dept').datagrid({
-        url:'./dept.json',
+        url:'192.168.140.43.8000/dev_web/json/deptToJSON',
         method: 'get'
       });
       }
@@ -22,19 +22,20 @@
  <table id = "dg-dept" class="easyui-datagrid" title="부서목록" style="width:700px;height:250px"
  data-options="toolbar: '#tb-dept', singleSelect:true,collapsible:true">
  <thead>
-  <th> <button onclick="deptList()">Search</button></th>
-   <tr>
+<!--   <th> <button onclick="deptList()">Search</button></th>-->   
+    <tr>
      <th data-options="field:'deptno',width:80">부서번호</th>
      <th data-options="field:'dname',width:100">부서이름</th>
      <th data-options="field:'loc',width:80">지역</th>
     </tr>
   </thead>
 </table>
-<!-- <div id="tb-dept">
+<div id="tb-dept">
   <a href="javascript:deptList();" class="easyui-linkbutton" iconCls="icon-search">Search</a>
-</div> -->
+</div>
 </body>
 </html>
+
 <!-- 
   1. TAG
   2. Javascript
