@@ -1,0 +1,13 @@
+div {
+  border:10px solid black;
+}
+
+.a {
+  border:5px solid aquamarine;
+  width: 300px;
+  height: 300px;
+}
+
+.b {
+  border:5px solid red;
+}
