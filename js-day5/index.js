@@ -29,10 +29,22 @@ const ul = document.createElement('ul');
 for (let i = 0; i<30; i++){
   const li = document.createElement('li');
   const a = document.createElement('a');
+  const span = document.createElement('span');
+  /* 
+    인라인 요소인 <span> 태그를 생성해서 li 자식 태그로 입력
+  <li>
+    <a></a> <span></span>
+  </li>
+  `comments (${newsFeed[i].comments_count})` 추가
+   */
+
+
   a.href = `#${newsFeed[i].id}`;
-  a.innerHTML = `${newsFeed[i].title} (comments: ${newsFeed[i].comments_count})`;
+  a.innerHTML = `${newsFeed[i].title}`; // (comments: ${newsFeed[i].comments_count}) 에 밑줄처리를 없애기 위에 span태그 생성.
   // span.
+  span.innerHTML = ` comments (${newsFeed[i].comments_count})`
   li.appendChild(a);
+  li.appendChild(span);
   ul.appendChild(li);
 }
 document.getElementById('root').appendChild(ul);
