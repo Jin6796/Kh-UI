@@ -49,8 +49,9 @@ header .gnb li a {
 }
 
 header .gnb li.on a {
-  background-color: greenyellow;
-  color: white;
+  background-color: yellowgreen;
+  color: black;
+  font: bold;
 }
 
 header .lnb {

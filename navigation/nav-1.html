@@ -37,6 +37,18 @@
       <video src="../navigation/forest.mp4" muted autoplay loop></video> <!-- mdn video 참고 -->
     </div>
   </main>
+  <script>
+    const btns = document.querySelectorAll(".gnb li");
+    btns.forEach((btn, index) => {
+      btn.addEventListener('click', (e) =>{
+        console.log(index);
+        for (let item of btns){
+          item.classList.remove('on');
+        }
+        btns[index].classList.add('on');
+      });
+    });
+  </script>
 </body>
 </html>
 

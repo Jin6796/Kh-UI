@@ -9,11 +9,11 @@
     function gugudanPrint(p_start, p_end){
       alert(`구구단 호출 성공 ${p_start} ${p_end}`);
       // 헤더처리
-      document.write("<center><h1>구구단</h1><table border='1' width='60%'><tr>");
+      document.write("<center><h1>구구단</h1><table border='1' width='60%'><tr>")
       // 단수처리    
-      for(let i=p_start; i<=p_end; i++){
-      document.write("<td bgcolor='yellowgreen' align='center'><font color='green'><b>",i,"단","</td>");
-      if(i=== p_end) document.write("</tr><tr>")
+      for(let i = p_start; i <= p_end; i++){
+      document.write("<td bgcolor='yellowgreen' align='center'><font color='green'><b>",i,"단","</b></font></td>");
+      if(i === p_end) document.write("</tr><tr>")
       }
       // 계산처리
       for(let i = p_start; i <= p_end; i++){
@@ -22,9 +22,9 @@
             document.write(i, "*", j, "=", i*j, "</br>");
         }
         document.write("</b></font></td>");
+      }
       // 바닥처리
       document.write("</tr></table></center>");
-      }
   }
     </script>
 </head>
@@ -32,7 +32,7 @@
   <form name = "f_dan">
     몇 단을 출력할까요?<br>
     시작단 <input type="text" size="4" name="start"><br>
-    끝... 단 <input type="text" size="4" name="end"><br>
+    끝&nbsp;&nbsp; 단 <input type="text" size="4" name="end"><br>
     <button onclick="gugudanPrint(document.f_dan.start.value, document.f_dan.end.value)">
           출력</button>
 </form>
