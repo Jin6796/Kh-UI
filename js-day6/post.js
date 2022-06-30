@@ -35,7 +35,7 @@ th1.appendChild(document.createTextNode('우편번호'));
 th2.appendChild(document.createTextNode('주소'));
 htr.appendChild(th1);
 htr.appendChild(th2);
-table.appendChild(htr);
+table.appendChild(htr); 
 for(let i=0; i<address.length; i++){
   const tr = document.createElement('tr');
   const td1 = document.createElement('td');

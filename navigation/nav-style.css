@@ -48,6 +48,11 @@ header .gnb li a {
   letter-spacing: 2px; /* 글자 간격 */
 }
 
+header .gnb li.on a {
+  background-color: greenyellow;
+  color: white;
+}
+
 header .lnb {
   display: flex;
 }
