@@ -1,7 +1,7 @@
-* {
+/* * {
   border: 1px solid red;
 }
-
+ */
 body {
   background-color: lightcyan;
 }
@@ -55,7 +55,6 @@ i{
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  background-color: aqua;
   color: white;
   font-weight: bold;
   border-radius: 30px;
@@ -64,7 +63,7 @@ i{
   height: 35px;
   margin: 20px 50px;
   letter-spacing: 1px;
-  box-shadow: 5px 6px 10px -3px rgb(177, 236, 236);
+  box-shadow: 5px 6px 10px -3px gray;
 }
 
 .facebook {
