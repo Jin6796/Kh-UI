@@ -1,5 +1,5 @@
 * {
-/*   border: 1px solid red; */
+  border: 1px solid red;
 }
 
 body {
@@ -120,21 +120,21 @@ i{
 }
 
 .btn1 {
-  background: aqua;
+  background-color: aqua;
   box-shadow: 5px 6px 10px -4px aqua;
 }
 
 .btn2 {
-  background: rgb(169, 238, 169);
+  background-color: rgb(169, 238, 169);
   box-shadow: 5px 6px 10px -3px rgb(169, 238, 169);
 }
 
 .btn3 {
-  background: rgb(250, 216, 221);
+  background-color: rgb(250, 216, 221);
   box-shadow: 5px 6px 10px -3px rgb(250, 216, 221);
 }
 
 .btn4 {
-  background: rgb(199, 161, 199);
+  background-color: rgb(199, 161, 199);
   box-shadow: 5px 6px 10px -3px rgb(199, 161, 199);
 }
