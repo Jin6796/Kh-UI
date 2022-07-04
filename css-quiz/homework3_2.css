@@ -1,0 +1,91 @@
+* {
+  border: 1px solid red;
+}
+
+div{
+  margin: 25px;
+}
+
+.box{
+  width: 350px;
+  height: 520px;
+}
+
+.card{
+  background-color: rgb(240, 240, 240);
+  width: 300px;
+  height: 470px;
+  border-radius: 10px;
+}
+
+img.main{/* 메인 사진 */
+  border-radius: 10px;
+  margin: 25px;
+  margin-bottom: 0px;
+}
+
+h3{ /* 타이틀 */
+  margin: 20px 25px;
+}
+
+.a{ /* 내용 */
+  margin: 20px 25px;
+}
+
+.detail{ /* 하단 박스 */
+  display: inline-flex;
+  margin: 0px 25px;
+}
+
+.profile{
+  margin: 0px;
+  width: 100px;
+  height: 40px;
+}
+
+img.profile{
+  border-radius: 50%;
+  width: 40px;
+}
+
+.b{ /* profile-name */
+  float:right;
+  width: 50px;
+  margin-top: 10px;
+}
+
+.counts { /* 댓글+좋아요 */
+  margin: 0px;
+  padding: 5px 0px;
+  width: 100px;
+  height: 30px;
+  float: right;
+  margin-left: 50px;
+}
+
+.comments {
+  margin: 0px;
+  float: left;
+}
+
+.likes {
+  margin: 0px;
+  float: right;
+}
+
+.c{ /* 좋아요 갯수 */
+  float: left;
+  margin: 0px;
+  margin-right: 5px;
+}
+
+.d{ /* 댓글 갯수 */
+  float: left;
+  margin: 0px;
+  margin-right: 5px;
+}
+
+/* .counts >p {
+  float: left;
+
+} */
