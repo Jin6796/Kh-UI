@@ -1,0 +1,17 @@
+table {
+  font-size: 12px;
+}
+
+thead, tfoot{
+  background-color: lightsalmon;
+  color: white;
+  height: 30px;
+}
+
+tbody{
+  background-color:lightgoldenrodyellow;
+}
+
+tfoot{
+  height: 0px;
+}
