@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+.videos { /* 텍스트 옆에 콩알 없애기 */
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column;
+   */
+  padding: 0px;
+  margin: 0px;
+}
+
+.container {
+  width: 100%;
+  padding: 0.2em;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  box-shadow: 5px 3px 10px -3px gray;
+}
+
+.video:hover {
+  transform: scale(1.02);
+}
+
+.thumbnail {
+  width: 40%;
+  height: 100%;
+}
+
+.title, .channel {
+  font-size: 0.8rem;
+  margin: 10px;
+}
