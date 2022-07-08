@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src = "../../js/jquery.min.js"> </script>
+  <script src = "../../js/jquery.easyui.min.js"> </script>
+  <link rel="stylesheet" href="../../themes/default/easyui.css">
+  <link rel="stylesheet" href="../../themes/icon.css">
+  <script>
+    function addressList(){
+      $('#dg_address').datagrid({
+        url:'./address.json',
+      });
+    }
+    function addressInsert(){
+        $('#dia_insert').dialog('open');
+    }
+  </script>
+</head>
+<body>
+  <table id="dg_address" class="easyui-datagrid"></table>
+  <div id="tb">
+    <a href="javascript:addressList()" class="easyui-linkbutton" data-options="iconCls: 'icon-search',plain:true"></a>조회</a>
+    <a href="javascript:addressInsert()" class="easyui-linkbutton" data-options="iconCls: 'icon-edit',plain:true"></a>입력</a>
+    <a href="javascript:addressUpdate()" class="easyui-linkbutton" data-options="iconCls: 'icon-reload',plain:true"></a>수정</a>
+    <a href="javascript:addressDelete()" class="easyui-linkbutton" data-options="iconCls: 'icon-cut',plain:true"></a>삭제</a>
+  </div>
+  <script>
+      //window.onload
+    $(document).ready(function(){
+      $('#dg_address').datagrid({
+        toolbar: '#tb',
+        method: 'get',
+        title: '주소록',
+        url:'./address.json',
+        columns:[[
+          {field:'name', title:'이름', width:100, align:'center'},
+          {field:'birthday', title:'생일', width:100, align:'center'},
+          {field:'address', title:'주소', width:250, align:'left'}
+        ]]
+      });
+    })
+  </script>
+  <div id="dia_insert" class="easyui-dialog" title="My Dialog" style="width:400px; height:200px"
+    data-option="iconCls: 'icon-save', resizable:true, modal:true, closed:true">
+    Dialog content
+  </div>
+</body>
+</html>
