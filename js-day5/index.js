@@ -31,6 +31,8 @@ for (let i = 0; i<30; i++){
   const a = document.createElement('a');
   const span = document.createElement('span');
   /* 
+  comment에 하이퍼링크를 빼고 싶으면
+  
     인라인 요소인 <span> 태그를 생성해서 li 자식 태그로 입력
   <li>
     <a></a> <span></span>
