@@ -44,7 +44,7 @@ const requestOptions2 = {
 
   window.addEventListener("hashchange", () => {
     console.log(location.hash);
-    const id = this.location.hash.substring(1);// #31914288에서 첫번째 자리 #은 자라내고 쓴다
+    const id = this.location.hash.substring(1);// #31914288에서 첫번째 자리 #은 잘라내고 쓴다
     fetch(CONTENT_URL.replace("@id", id), requestOptions2)
       .then(response => response.json())
       // callback
@@ -57,11 +57,13 @@ const requestOptions2 = {
       .catch(error => console.log('error', error));
   });
   
- /* function router(){
-   const hashValue = location.hash;
+
+//
+  /* function router(){
+  const hashValue = location.hash;
    // 첫 진입이면
-   if(hashValue === ""){
-     getNewsList();
+  if(hashValue === ""){
+    getNewsList();
     } else getNewsContent();
   }
   

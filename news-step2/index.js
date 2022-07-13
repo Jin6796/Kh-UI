@@ -53,3 +53,15 @@ fetch("https://api.hnpwa.com/v0/news/1.json", requestOptions)
       .catch(error => console.log('error', error));
   });
   
+//
+  /* function router(){
+  const hashValue = location.hash;
+   // 첫 진입이면
+  if(hashValue === ""){
+    getNewsList();
+    } else getNewsContent();
+  }
+  
+  window.addEventListener("hashchange", router); // 이벤트 핸들러를 매핑하는 코드.
+  router();
+  */
