@@ -2,6 +2,8 @@ const a = document.querySelector("a");
 // console.log(a);
 // console.dir(a); // DOM의 구조를 본다
 a.onclick = (event) => {
+  // 이벤트 핸들러는 event 객체 주입이 안된다.
+  // 그래서 사용할 수 없음! >> 이벤트 처리하면 헤어지지롱
   event.preventDefault();
   console.log("네이버클릭");
 }
