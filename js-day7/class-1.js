@@ -10,7 +10,7 @@ class Car {
   // 사용자 정의 함수를 가질 수 있다. -> 제공되는 함수가 있다. - window, document.write()
   display = () => {
     console.log(`${this.name}, ${this.emoji}`);
-  }
+  } 
 }
 // myCar/yourCar는 Car 클래스의 인스턴스이다.
 const myCar = new Car("Sonata", "🚗");
