@@ -1,42 +1,67 @@
-const footer_input = document.querySelector('footer_input'); // input
-const items = document.querySelector('items');               // ul
-const btn_ins = document.getElementById('btn_ins');
-const btn_del = document.getElementById('btn_del');
+const footer_input = document.querySelector('.footer_input'); // input
+const items = document.querySelector('.items');               // ul
+const btn_ins = document.querySelector('.btn_ins');
+const btn_del = document.querySelector('.btn_del');
 
-    // const item_row = document.createElement('li');   
-    // item_row.classList.add('item_row');
+function addList(){
+  const text = footer_input.value;  // 내용 추가
+  if(text === ""){
+    footer_input.focus();
+    return;
+  }
+  const list = createList(text);
+  items.appendChild(list);
 
-    // const item = document.createElement('div');
-    // item.classList.add('item');
-    
-    // const item_name = document.createElement('span');
-    // item_name.classList.add('item_name');
-    
-    // const btn_del = document.createElement('button');
-    // btn_del.classList.add('btn_del');
-    
-    // const item_divider = document.createElement('div');
-    // item_divider.classList.add('item_divider');
-  
-    // // ul.li.div(span,button)
-    // item_row.appendChild(item);
-    // item_row.appendChild(item_divider);
-
-    // item.appendChild(item_name);
-    // item.appendChild(btn_del);
-
-    // items.appendChild(item_row);
-
-if(btn_ins) {
-    btn_ins.addEventListener('click', () => {
-    console.log('btn clicked');
-    });
+  list.scrollIntoView({block: 'center'}); // 새로 선언된 곳으로 스크롤 위치 이동
+  footer_input.value='';
+  footer_input.focus();
 }
 
-/* btn_ins.addEventListener('click', (e) => {
-    console.log('버튼 클릭');
-    const item_row = document.createElement('li');
-    item_row.appendChild(document.createTextNode(footer_input.value));
-    items.appendChild(item_row);
-    footer_input.value ="";
-}); */
+function createList(text) {
+  const item_row = document.createElement('li');   
+  item_row.setAttribute('class', 'item_row');
+  items.appendChild(item_row);
+  
+  const item = document.createElement('div');
+  item.setAttribute('class', 'item');
+  item_row.appendChild(item); 
+  
+  const item_name = document.createElement('span');
+  item_name.setAttribute('class', 'item_name');
+  item.appendChild(item_name); 
+  item_name.innerText = text; // name.textContent = text;
+  
+  const btn_del = document.createElement('button');
+  btn_del.setAttribute('class', 'btn_del');
+  btn_del.innerHTML = '<i class="fas fa-trash-alt"></i>';
+  item.appendChild(btn_del);  
+  btn_del.addEventListener('click', () => {
+    items.removeChild(item_row);
+  });
+  
+  const item_divider = document.createElement('div');
+  item_divider.setAttribute('class', 'item_divider');
+  item_row.appendChild(item_divider); 
+  return item_row;
+
+
+  // ul.li.div(span,button)
+  // items.appendChild(item_row);         // ul에 li넣기
+
+  // item_row.appendChild(item);          // li에 div넣기
+  // item_row.appendChild(item_divider); 
+  
+  // item.appendChild(item_name);         // div에 span넣기
+  // item.appendChild(btn_del);           // div에 button넣기
+}
+
+btn_ins.addEventListener('click', () => {
+  addList();
+});
+
+footer_input.addEventListener('keypress', (e) =>{
+  console.log('key값: ' + e.key);
+  if(e.key==='Enter') {
+    addList();
+    }
+})

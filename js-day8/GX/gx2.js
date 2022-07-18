@@ -2,6 +2,7 @@
 
 const btn_del = document.querySelector(".btn_del");
 const btn_ins = document.querySelector(".btn_ins");
+
 const items = document.querySelector("items");               // ul
 const footer_input = document.querySelector("footer_input"); // input
 
