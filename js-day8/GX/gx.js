@@ -1,47 +1,42 @@
-// const e = require("express");
+const footer_input = document.querySelector('footer_input'); // input
+const items = document.querySelector('items');               // ul
+const btn_ins = document.getElementById('btn_ins');
+const btn_del = document.getElementById('btn_del');
 
-const btn_del = document.querySelector(".btn_del");
-const btn_ins = document.querySelector(".btn_ins");
-const items = document.querySelector("items");               // ul
+    // const item_row = document.createElement('li');   
+    // item_row.classList.add('item_row');
 
-const item_row = document.createElement("item_row");         // li
-const item = document.createElement("item");                 // div
-const item_name = document.createElement("item_name");       // span
-const item_divider = document.createElement("item_divider"); // div
+    // const item = document.createElement('div');
+    // item.classList.add('item');
+    
+    // const item_name = document.createElement('span');
+    // item_name.classList.add('item_name');
+    
+    // const btn_del = document.createElement('button');
+    // btn_del.classList.add('btn_del');
+    
+    // const item_divider = document.createElement('div');
+    // item_divider.classList.add('item_divider');
+  
+    // // ul.li.div(span,button)
+    // item_row.appendChild(item);
+    // item_row.appendChild(item_divider);
 
+    // item.appendChild(item_name);
+    // item.appendChild(btn_del);
 
-function insertList(e){
-  e.preventDeFault();
-  const footer_input = document.querySelector("footer_input"); // input
-  if(footer_input !== ''){
-    addList(footer_input.value);
-    footer_input.value = '';
-  }
+    // items.appendChild(item_row);
+
+if(btn_ins) {
+    btn_ins.addEventListener('click', () => {
+    console.log('btn clicked');
+    });
 }
 
-function addList(value){
-  const items = document.querySelector("items");       // ul
-  const item_row = document.createElement("item_row"); // li
-  item_row.innerHTML =``;
-  items.appendChild(item_row);
-}
-
-// for (let i=1; i<input.length; i++) {
-//   items.appendChild(item_row);
-//   item_row.appendChild(item);
-//   item.appendChild(item_name);
-//   item.appendChild(btn_del);
-// }
-
-// if(!footer_input.value) alert('내용을 입력해주세요.');
-
-
-btn_ins.addEventListener('click', (event) => {
-  console.log('추가');
-  alert(event.textContent);
-})
-
-btn_del.addEventListener('click', (event) => {
-  console.log('삭제');
-  console.log(event);
-})
+/* btn_ins.addEventListener('click', (e) => {
+    console.log('버튼 클릭');
+    const item_row = document.createElement('li');
+    item_row.appendChild(document.createTextNode(footer_input.value));
+    items.appendChild(item_row);
+    footer_input.value ="";
+}); */
