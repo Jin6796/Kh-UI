@@ -3,27 +3,25 @@
 const btn_del = document.querySelector(".btn_del");
 const btn_ins = document.querySelector(".btn_ins");
 
-const items = document.querySelector("items");               // ul
-const footer_input = document.querySelector("footer_input"); // input
-
+const items = document.querySelector(".items");               // ul
+const footer_input = document.querySelector(".footer_input"); // input
+/* 
 const item_row = document.createElement("item_row");         // li
 const item = document.createElement("item");                 // div
 const item_name = document.createElement("item_name");       // span
 const item_divider = document.createElement("item_divider"); // div
+ */
 
 let lists = [];
 let list = 0;
 
-const main = () => {
-  footer_input.addEventListener('click', (e) => {
-    /* if(e.key === 'Click') {
 
-    } */
-    console.log("+ 클릭");
-  })
-}
 
-main();
+
+
+
+
+
 
 /* function insertList(e){
   e.preventDeFault();

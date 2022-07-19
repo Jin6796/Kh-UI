@@ -1,67 +1,62 @@
 const footer_input = document.querySelector('.footer_input'); // input
 const items = document.querySelector('.items');               // ul
-const btn_ins = document.querySelector('.btn_ins');
-const btn_del = document.querySelector('.btn_del');
+const btn_ins = document.querySelector(".btn_ins");
+const btn_del = document.querySelector(".btn_del");
 
-function addList(){
-  const text = footer_input.value;  // 내용 추가
-  if(text === ""){
+const addList = () => {
+  const content = footer_input.value;
+  if(!content){
     footer_input.focus();
     return;
   }
-  const list = createList(text);
+  const list = updateList(content);
   items.appendChild(list);
 
-  list.scrollIntoView({block: 'center'}); // 새로 선언된 곳으로 스크롤 위치 이동
-  footer_input.value='';
-  footer_input.focus();
+  footer_input.value=''; // 빈 칸으로 초기화
 }
 
-function createList(text) {
+const updateList = (content) => {
   const item_row = document.createElement('li');   
-  item_row.setAttribute('class', 'item_row');
+  item_row.classList.add('item_row');
   items.appendChild(item_row);
-  
+
   const item = document.createElement('div');
-  item.setAttribute('class', 'item');
-  item_row.appendChild(item); 
+  item.classList.add('item');
+  item_row.appendChild(item);
   
   const item_name = document.createElement('span');
-  item_name.setAttribute('class', 'item_name');
-  item.appendChild(item_name); 
-  item_name.innerText = text; // name.textContent = text;
+  item_name.classList.add('item_name');
+  item.appendChild(item_name);
+  item_name.innerText = content;
   
   const btn_del = document.createElement('button');
-  btn_del.setAttribute('class', 'btn_del');
+  btn_del.classList.add('btn_del');
   btn_del.innerHTML = '<i class="fas fa-trash-alt"></i>';
-  item.appendChild(btn_del);  
+  item.appendChild(btn_del);
   btn_del.addEventListener('click', () => {
     items.removeChild(item_row);
   });
-  
+    
   const item_divider = document.createElement('div');
-  item_divider.setAttribute('class', 'item_divider');
-  item_row.appendChild(item_divider); 
-  return item_row;
-
-
-  // ul.li.div(span,button)
-  // items.appendChild(item_row);         // ul에 li넣기
-
-  // item_row.appendChild(item);          // li에 div넣기
-  // item_row.appendChild(item_divider); 
+  item_divider.classList.add('item_divider');
+  item_row.appendChild(item_divider);
   
-  // item.appendChild(item_name);         // div에 span넣기
-  // item.appendChild(btn_del);           // div에 button넣기
-}
+  return item_row;
+  }
 
-btn_ins.addEventListener('click', () => {
+btn_ins.addEventListener('click', () =>{
   addList();
 });
 
-footer_input.addEventListener('keypress', (e) =>{
-  console.log('key값: ' + e.key);
-  if(e.key==='Enter') {
-    addList();
-    }
-})
+
+
+// btn_ins.addEventListener('click', (e) => {
+//   if(!footer_input.value)
+//     alert('내용을 입력하세요');
+//     else{
+//       item_row.innerText = footer_input.value;
+//       items.appendChild(item_row);
+//       footer_input.value ="";
+//     }
+// // console.log('버튼 클릭');
+// });

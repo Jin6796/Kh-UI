@@ -10,43 +10,41 @@ const addList = () => {
     return;
   }
   const list = updateList(content);
-  items.appendChild(list);
+  console.log('확인');
+  items.appendChild(list);//************** */
+  console.log('확인2');
+
+  itemList.push(content);
+  footer_input.value=''; // 빈 칸으로 초기화
+  
 }
 
-const updateList = (content) => {
-  const item_row = document.createElement('li');   
-  item_row.classList.add('item_row');
-  items.appendChild(item_row);
+let itemList = [];
 
-  const item = document.createElement('div');
-  item.classList.add('item');
-  item_row.appendChild(item);
-  
-  const item_name = document.createElement('span');
-  item_name.classList.add('item_name');
-  item.appendChild(item_name);
-  item_name.innerText = content;
-  
-  const btn_del = document.createElement('button');
-  btn_del.classList.add('btn_del');
-  item.appendChild(btn_del);
-    
-  const item_divider = document.createElement('div');
-  item_divider.classList.add('item_divider');
-  item_row.appendChild(item_divider);
+function updateList(content) {
+  for(let i=0; i<= itemList.length; i++){
+    itemList.innerText = content;
+    items.innerHTML = `
+    <li class="item_row">
+      <div class="item">
+        <span class="item_name" id="${i}">
+        ${itemList.innerText}
+        </span>
+        <button class="btn_del"><i class="fas fa-trash-alt"></i></button>
+      </div>
+    </li>
+    <div class="item_divider"></div>
+  `;
   }
+  // console.log(document.getElementById(0));
+  console.log(content);
+  console.log(itemList.length);
+}
 
 btn_ins.addEventListener('click', () =>{
   addList();
-})
+});
 
-// btn_ins.addEventListener('click', (e) => {
-//   if(!footer_input.value)
-//     alert('내용을 입력하세요');
-//     else{
-//       item_row.innerText = footer_input.value;
-//       items.appendChild(item_row);
-//       footer_input.value ="";
-//     }
-// // console.log('버튼 클릭');
-// });
+// btn_del.addEventListener('click', () => {
+//   items.removeChild(item_row);
+// })
