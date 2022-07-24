@@ -13,7 +13,7 @@ a { /* 텍스트 아래에 줄 없애기 */
 }
 
 body {
-  background-color: rgb(23, 4, 107); /* 나중에 black */
+  background-color: rgb(23, 4, 107);
   padding: 1px;
   margin: 0px;
   color: white;
@@ -27,7 +27,6 @@ body {
   width: 100%; /* 1 */
   border-bottom: 1px solid #aaaaaa; /* 2 메뉴아래 구분선 */
   display: flex; /* 3 */
-  position: absolute;
   z-index: 2;          /* 헤더까지 영상이 올라오도록 하기 */
   top: 0px;
   left: 0px;
@@ -48,58 +47,74 @@ body {
 }
 
 .header_center { /* 상단바 메뉴 */
-
 }
 
 .main_nav {
-
+  margin: 0%;
 }
 
 .header_ul01 {
   display: flex; /* 5 안쪽에 있는 li들이 좌우 균등하게 배치됨. */
   margin-top: 1.2rem;
-  margin-bottom: 0px;
-  padding: 0px;
+  margin-bottom: 2rem;
+  padding: 5px;
   justify-content: space-between;
 }
 
-.header a {
+.header_ul01 a {
   letter-spacing: 1px;
+  margin: 0px 30px;
 }
 
 .header_ul01 li {
-  margin: 0px 30px; /* 6 위아래 0px, 양 옆에 20px */
+  min-width: max-content;
   font-family: 'Dosis', sans-serif;
   cursor: pointer;
-  min-width: max-content; /* 화면줄어들 때 고정 */
+  /* margin: 0% 10%; */
+  display: inline-block;
+  top: 0;
 }
 
 .header_ul01 li a {
   font-size: 105%;
 }
 
-.header_ul01 li a:hover{
+
+.header_ul01 li:hover a{
   border-radius: 5px;
-  color: rgb(0, 0, 255);
   /* text-decoration:underline;
   text-underline-position:under; 밑줄 */ 
   font-weight: bold;
-  background-color: rgb(255, 255, 255, 0.6);
 }
 
 .header_ul02 {
   padding: 0%;
+  display:none; 
+  position:absolute;
+  background-color: rgba(8, 2, 61, 0.5);
+
 }
 
-.header_ul02 li {
+.header_ul01 li:hover ul{/* 하위 메뉴 숨기기 */
+  display:block;
+}
+
+.header_ul02 li{
   margin: 0.4rem 0rem;
-  /* letter-spacing: 2px; 글자 간격 */
+}
+
+.header_ul02 li a{
   color: #aaaaaa;
   font-size: 90%;
 }
 
-.header_ul02 li:hover{
+.header_ul02 li a{
+  display:block;
+}
+
+.header_ul02 li a:hover{
   color: white;
+  background: none;
 }
 
 .header_right { /* 로그인 */
@@ -122,51 +137,26 @@ header .btnMenu {
   display: none;
 }
 
-.camp-bg {
-  width: 100%;
-  height: 100vh;
-}
-
-/* 영상이 화면에 맞춰지도록 하기 */
-.video-wrap video { 
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-}
-
-.text-wrap {
-  position: absolute;
-  z-index: 2;
-  width: 520px;
-  height: 100vh; /* 뷰포트 */
-  padding: 15% 3%;
-  left: 0;
-  top: 15%;
-}
-
-.text-wrap h2 {
-  font-size: 50px;
-  line-height: 1.25;
-  margin-bottom: 40px;
-  font-weight: lighter;
-}
-
-.text-wrap h3 {
-  font-size: 24px;
-  line-height: 1.25;
-  margin-bottom: 20px;
-}
-
-.text-wrap p {
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
 .main_container{
   border-bottom: 1px solid #aaaaaa; /* 2 메뉴아래 구분선 */
 }
+
+.gx{
+  justify-content: space-between;
+  margin: 1%;
+}
+
+.gx_img{
+  width: 60%;
+}
+
+.gx_info{
+  display: inline-block;
+  width: 40%;
+  margin: 1%;
+}
+
+
 
 .footer_container {
   display: flex;
