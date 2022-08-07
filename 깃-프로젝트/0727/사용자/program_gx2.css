@@ -13,7 +13,7 @@
   z-index: 200;
 }
 
-ul { /* 텍스트 옆에 콩알 없애기 */
+ul, li { /* 텍스트 옆에 콩알 없애기 */
   list-style: none;
 }
 
@@ -34,8 +34,8 @@ body {
   padding: 1px;
 }
 
-#nav_bar {
-
+.dropdown-toggle::after {
+  display:none;
 }
 
 .header_container {
@@ -46,85 +46,65 @@ body {
   top: 0px;
   left: 0px;
   padding: 1px;
-  justify-content: space-between; /* 4 양 끝에 균등하게 배치 */
+}
+
+.container-fluid{
+  border-bottom: 2px solid #aaaaaa; /* 2 메뉴아래 구분선 */
+
 }
 
 .navbar-brand { /* 로고 */
+  margin: 0rem 1rem;
+  margin-bottom: 0.5rem;
+  margin-left: 3%;
+  margin-right: 10%;
   padding: 1%;
-  padding-left: 2rem;
-  padding-right: 10%;
   color: white;
   font-weight: bold;
   font-family: 'Caveat', cursive;
   font-size: 2rem;
-  margin: 0rem 1rem;
 }
 
-#navbarNav{
-  margin-bottom: 1%;
+.navbar-brand:hover{
+  color: rgba(195, 195, 255, 0.459);
 }
 
-.header_ul01 {
-  /* display: flex;
-  justify-content: space-around; */
-  margin-top: 1.2rem;
+#nav-item{
+  margin-left: 2%;
+  white-space:nowrap;
 }
 
-.header_ul01 a {
-  letter-spacing: 1px;
-  margin: 0rem 1rem;
+#navbar01{
+  letter-spacing: 0.1rem;
+}
+
+.nav-link{
   color: white;
-}
-
-.header_ul01 li {
-  min-width: max-content;
-  font-family: 'Dosis', sans-serif;
-  cursor: pointer;
-  /* margin: 0% 10%; */
-  display: inline-block;
-  top: 0;
-}
-
-.header_ul01 li a {
   font-size: 105%;
 }
 
-.header_ul01 li:hover a{
+#nav-link-eng{
+  font-family: 'Dosis', sans-serif;
+}
+
+.nav-link:hover{
   border-radius: 5px;
   /* text-decoration:underline;
   text-underline-position:under; 밑줄 */ 
   font-weight: bold;
-}
-
-.header_ul02 {
-  padding: 0%;
-  display: none; 
-  position:absolute;
-  background-color: rgba(5, 1, 43, 0.644);
-  border-radius: 10px;
-}
-
-/* 하위 메뉴 숨기기 */
-.header_ul01 li:hover ul{
-  display:block;
-}
-
-.header_ul02 li{
-  margin: 0.4rem 0rem;
-}
-
-.header_ul02 li a{
-  color: #aaaaaa;
-  font-size: 90%;
-}
-
-.header_ul02 li a{
-  display:block;
-}
-
-.header_ul02 li a:hover{
   color: white;
-  background: none;
+}
+
+.dropdown-item{
+  color: white;
+  font-size: smaller;
+}
+.dropdown-item:hover{
+  background-color: rgba(235, 235, 235, 0.76);
+}
+
+.dropdown-menu{
+  background: linear-gradient(to right, rgba(35, 1, 189, 0.726), rgba(14, 1, 71, 0.726));
 }
 
 .header_right { /* 로그인 */
@@ -151,8 +131,9 @@ body {
   border: 0px;
   margin-right: 1%;
 }
-.navbar-toggler-icon {
-  font-size: 20px;
+
+.custom-toggler.navbar-toggler {
+  color: rgb(255,102,203);
 }
 
 .main_container{
@@ -200,27 +181,13 @@ body {
   max-height: 70%;
 }
 
-
-
-
-
 .footer_container {
   display: flex;
   justify-content: space-between; 
   padding: 1% 2.5%;
+
 }
 
-
-
-/* 반응형 웹 처리 */
-@media screen and (max-width: 1024px) {
-  header .gnb {
-    display: none;
-  }
-  header .lnb {
-    display: none;
-  }
-  header .btnMenu {
-    display: block;
-  }
+.foot_detail{
+  font-family: 'Dosis', sans-serif;
 }
