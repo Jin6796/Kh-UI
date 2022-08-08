@@ -307,11 +307,11 @@
             } ////// end of for
 
             $(".pagenation").text("")
-            /* 페이지 네비게이션 처리 위치 */
-            const pagePath = "list.html";
-            const pb = new PageBar(numPerPage, total, nowPage, pagePath);
-            // console.log(pb.getPageBar()); // class PageBar에서 생성되는 링크 출력해보자
-            $(".pagenation").append(pb.getPageBar())
+              /* 페이지 네비게이션 처리 위치 */
+              const pagePath = "list.html"
+              const pb = new PageBar(numPerPage, total, nowPage, pagePath)
+              //console.log(pb.getPageBar()) class PageBar에서 생성되는 링크 출력해봄
+              $(".pagenation").append(pb.getPageBar())
           
           })  ////// end of callback
         } ////// end of searchList
