@@ -36,18 +36,18 @@
       const db = firebase.firestore();
       let params = new URLSearchParams(document.location.search);
       let id = params.get("id"); // 문자열 "Jonathan"
-      console.log("사용자가 선택한 doc.id" + id);
+      console.log("사용자가 선택한 doc.id: " + id);
       $("#exampleModal").modal("show")
       const readModal = document.getElementById("exampleModal");
       readModal.addEventListener("shown.bs.modal", () => {
         db.collection("members").doc(id).get().then((result) =>{
           // console.log(result.data());
-          const name = result.data().이름; 
-          const gender = result.data().성별;
-          const branch = result.data().등록지점;
-          const period = result.data().등록기간;
-          const phone = result.data().연락처;
-          const email = result.data().이메일;
+          const name = result.data().mem_name; 
+          const gender = result.data().mem_gender;
+          const branch = result.data().mem_branch;
+          const period = result.data().mem_period;
+          const phone = result.data().mem_phone;
+          const email = result.data().mem_mail;
           $("#exampleModalLabel").text(name+' 회원 상세정보');
           $(".name").text(name);
           $(".gender").text(gender);

@@ -1,10 +1,10 @@
 
 //////////////////////////////////////////////////////////// 추가
-let firebaseEmailAuth; //파이어베이스 email 인증 모듈 전역변수
-let firebaseDatabase; //파이어베이스 db 모듈 전역변수
-let Name; //유저 이름
-let loginUserKey; //로그인한 유저의 부모 key
-let userInfo; //로그인한 유저의 정보 object type
+var firebaseEmailAuth; //파이어베이스 email 인증 모듈 전역변수
+var firebaseDatabase; //파이어베이스 db 모듈 전역변수
+var Name; //유저 이름
+var loginUserKey; //로그인한 유저의 부모 key
+var userInfo; //로그인한 유저의 정보 object type
 
 
 // Your web app's Firebase configuration
@@ -25,8 +25,6 @@ firebase.initializeApp(firebaseConfig);
 firebaseEmailAuth = firebase.auth();
 //데이터베이스 모듈객체 가져오기
 firebaseDatabase = firebase.database();
-
-const db = firebase.firestore();
 
 //세션 체크 함수
 userSessionCheck();
@@ -55,41 +53,11 @@ function userSessionCheck() {
           });
         });
         document.getElementById("joinmenu").textContent = user.displayName + " 님";
-        // document.getElementById("joinmenu").href = "#";
-        document.getElementById("joinmenu").addEventListener('click',()=>{
-          // 마이페이지로 이동하기
-          alert('마이페이지로 이동합니다.');
-          window.location.href = "./mypage.html";
-        });
+        document.getElementById("joinmenu").href = "#";
+
         document.querySelector('#loginmenu').addEventListener('click',() => {
           window.location = "mdb-login.html";
         });
-
-        
-
-        ////////////////////////정보가져오기 추가///////////////////////////////
-        const docRef = db.collection("user").doc(user.uid);
-        docRef.get().then((doc) => {
-          if (doc.exists) {
-            console.log("Document data:", doc.data());
-            if(doc.data().level > 2){
-              const test = document.querySelector("#btn_detail_ys");
-              //const test = document.querySelector(".btn.btn-primary.btn-sm");
-              test.style.cssText =""
-              console.log("너 관리자임");
-            } else console.log("너 회원임");
-          } else {
-              // doc.data() will be undefined in this case
-              console.log("No such document!");
-          }
-        }).catch((error) => {
-          console.log("Error getting document:", error);
-        });
-
-
-          
-
-
         // Name = snapshot.val().name;   //유저 닉네임은 계속 쓸거기 때문에 전역변수로 할당
         loginUserKey = snapshot.key;  //로그인한 유저의 key도 계속 쓸 것이기 때문에 전역변수로 할당
         userInfo = snapshot.val(); //snapshot.val()에 user 테이블에 있는 해당 개체 정보가 넘어온다. userInfo에 대입!
@@ -157,13 +125,13 @@ input = document.getElementById('search_value')
 function searchlist(){
   let value , item , name
     
-  value = document.getElementById('search_value').value;
+  value = document.getElementById('search_value').value.toUpperCase();
   item = document.getElementsByClassName('list-group-branch')
     
   //indexOf()를 활용한 검색기능 구현
   for(i=0;i<item.length;i++){
       name = item[i].querySelectorAll(".list-group-item.list-group-item-action");
-      if(name[0].innerHTML.indexOf(value) > -1){
+      if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
         item[i].style.display = "flex";
       }else{
         item[i].style.display = "none";
@@ -184,9 +152,3 @@ input.focus()
 }); */
 
 button.addEventListener('click',searchlist);
-
-/* 지점 상세보기 버튼 이벤트 */
-
-document.getElementById('btn_detail_ys').addEventListener('click',()=>{
-  window.location ="branch_detail_ys.html";
-});
