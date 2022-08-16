@@ -153,80 +153,46 @@ body {
   border-bottom: 2px solid #aaaaaa; /* 2 메뉴아래 구분선 */
   padding: 5% 7%;
   margin-left: 1rem;
+  color: black;
 }
 
-#branch_list {
-  color: rgba(52, 52, 185, 0.575);
-  font-weight: bold;
+.form-group {
+  display: flex;
+  align-items: center;
 }
 
-.tag {
+.form-group label{
+  width: 4rem;
+}
+
+.register {
+  margin-top: 1rem;
   text-align: center;
 }
 
-.taglist {
-  display: inline-block;
-  margin-top: 53px;
-  line-height: 1.6;
-}
 
-.taglist a{
-  color: rgba(52, 52, 185, 0.575);
-  font-weight: bold;
-  font-weight: bold;
-}
-
-.taglist-item {
-  float: left;
-  margin-right: 15px;
-  font-size: 20px;
-}
-
-/* 상세보기 버튼 */
-.btn.btn-primary.btn-sm {
-  margin: auto;
-  width: 5rem;
-  height: 2rem;
-}
-/* 지점 목록 이름과 버튼 간격 */
-.list-group-branch {
-  display: flex;
-  justify-content: space-between;
-}
-
-.btn_detail{
-  display: none;
-}
-
-.service-item {
-  box-shadow: 0 0 45px rgba(0, 0, 0, 0.24);
-}
-
-.img-fluid{
-  box-shadow: 0px 0px 10px 1px rgb(57, 54, 70);
-}
-
-.footer_container{
+/* 메인 끝 푸터시작 */
+.footer_container {
   padding: 1% 2.5%;
   padding-left: 3%;
   font-size: 90%;
 }
 
-.foot_detail{
-  font-family: 'Ubuntu', sans-serif;
+.foot_detail {
+  font-family: "Ubuntu", sans-serif;
 }
 
-.foot_detail:hover{
+.foot_detail:hover {
   color: rgba(195, 195, 255, 0.459);
 }
 
-.icons{
+.icons {
   float: right;
   display: flex;
   align-items: center;
   min-width: max-content;
 }
 
-.icon{
+.icon {
   margin: 0.3rem;
 }

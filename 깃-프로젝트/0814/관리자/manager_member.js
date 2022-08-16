@@ -10,7 +10,7 @@ const firebaseConfig = { // 개인 key 값
 };
 firebase.initializeApp(firebaseConfig);
 
-dbtable();
+memList();
 
 //전체레코드 갯수
 class PageBar {
@@ -34,7 +34,6 @@ class PageBar {
   }
   //setter메소드 선언
   setPageBar() {
-    console.log("nowBlock:" + this.nowBlock);
     let pageLink = "";
     if (this.totalRecord > 0) {
       if (this.nowBlock > 0) {
@@ -86,7 +85,7 @@ class PageBar {
   }
 }
 
-function dbtable() {
+function memList() {
   const db = firebase.firestore();
   let num = 0;
   let total = 0;
@@ -100,8 +99,6 @@ function dbtable() {
     .get()
     .then((snapshot) => {
       console.log(snapshot);
-
-      console.log(JSON.stringify(snapshot));
       total = snapshot.docs.length;
       console.log("전체 회원 수: " + total);
       for (
@@ -132,9 +129,10 @@ function dbtable() {
     });
 }
 function searchList() {
+  const db = firebase.firestore();
   const choice = $("#gubun option:selected").val();
   const user = $("#keyword").val();
-  alert("검색: " + choice + ", " + user);
+  // alert("검색: " + choice + ", " + user);
 
   let num = 0;
   let total = 0;
@@ -144,15 +142,15 @@ function searchList() {
   nowPage = param.get("nowPage");
 
   db.collection("members")
-    .where(choice, "==", user).orderBy("mem_branch")
-    .get().then((snapshot) => {
-      total = snapshot.docs.length;
+    .where(choice, "==", user)
+    .get().then((snapshot)=> { 
+      total = snapshot.docs.length
       if(total>0){
         $(".table-group-divider").text("")
       }
-      console.log("전체 회원 수==>" + total);
-      for (let i = nowPage * numPerPage; i < (nowPage * numPerPage) + numPerPage; i++){
-        if (total === i) break;
+      console.log("검색어와 일치하는 데이터 수: " + total);
+        for(let i=nowPage*numPerPage; i<(nowPage*numPerPage)+numPerPage; i++){
+        if(total === i) break;
         num = i;
         const template=`
                         <tr>
@@ -174,4 +172,3 @@ function searchList() {
         $(".pagination").append(pb.getPageBar())
     })
 }
-

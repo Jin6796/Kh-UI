@@ -291,6 +291,7 @@
             if(total>0){
               $(".board-content").text("")
             }
+            console.log(JSON.stringify(snapshot));
             console.log("전체 레코드 수: " + total);
               for(let i=nowPage*numPerPage; i<(nowPage*numPerPage)+numPerPage; i++){
               if(total === i) break;

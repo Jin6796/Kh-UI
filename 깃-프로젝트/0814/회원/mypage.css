@@ -121,12 +121,19 @@ body {
   margin-right: 0.5rem;
   margin-top: 0.1rem;
   text-align: right;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+  justify-content: flex-end;
 }
 
-.header_right button {
-  background: none;
-  border: white solid 1px;
-  border-radius: 5px;
+.header_right img {
+  margin-left: 0.5rem;
+}
+
+#img {
+  border: rgba(255, 255, 255, 0.637) solid 2px;
+  border-radius: 50%;
   cursor: pointer;
   color: white;
   font-size: 75%;
@@ -155,47 +162,34 @@ body {
   margin-left: 1rem;
 }
 
-#branch_list {
-  color: rgba(52, 52, 185, 0.575);
-  font-weight: bold;
-}
-
-.tag {
-  text-align: center;
-}
-
-.taglist {
-  display: inline-block;
-  margin-top: 53px;
-  line-height: 1.6;
-}
-
-.taglist a{
-  color: rgba(52, 52, 185, 0.575);
-  font-weight: bold;
-  font-weight: bold;
-}
-
-.taglist-item {
-  float: left;
-  margin-right: 15px;
-  font-size: 20px;
-}
-
-/* 상세보기 버튼 */
-.btn.btn-primary.btn-sm {
+#profile_img, #inbody_img2 {
+  display: block;
   margin: auto;
-  width: 5rem;
-  height: 2rem;
-}
-/* 지점 목록 이름과 버튼 간격 */
-.list-group-branch {
-  display: flex;
-  justify-content: space-between;
 }
 
-.btn_detail{
-  display: none;
+.card-text  {
+  color: black;
+  font-weight: bold;
+}
+
+.text-primary{
+  font-size: larger;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.mb-4{
+  color:black; 
+}
+
+.mb-3 {
+  color:black; 
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.mb-2{
+  color:black; 
 }
 
 .service-item {
