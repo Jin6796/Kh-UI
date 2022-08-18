@@ -224,3 +224,16 @@ body {
 .icon{
   margin: 0.3rem;
 }
+
+.navbar-brand2 { /* 로고 */
+  margin: 0.3rem 1rem;
+  margin-left: 3%;
+  margin-right: 10%;
+  padding: 1%;
+  color: midnightblue;
+  font-weight: bold;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 2rem;
+  margin-top: 0px;
+  padding-top: 0px;
+}

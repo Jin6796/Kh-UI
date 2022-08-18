@@ -37,13 +37,16 @@ function userSessionCheck() {
                   const hidden2 = document.querySelector("#delete_complete");
                   hidden1.style.cssText =""
                   hidden2.style.cssText =""
+                  // console.log("user.uid: " + user.uid);
                   console.log("관리자 계정 확인, 숨겨진 버튼 보여줄게");
                 } else if(doc.data().level == 1){
                   const hidden1 = document.querySelector("#modifying-btn");
                   const hidden2 = document.querySelector("#delete_complete");
                   hidden1.style.cssText =""
                   hidden2.style.cssText =""
+                  // console.log("user.uid: " + user.uid);
                   console.log("회원 계정 확인, 숨겨진 버튼 보여줄게");
+                  
                 } else console.log("비회원 확인");
               } else {
               }
@@ -53,6 +56,41 @@ function userSessionCheck() {
             
             loginUserKey = snapshot.key; //로그인한 유저의 key도 계속 쓸 것이기 때문에 전역변수로 할당
             userInfo = snapshot.val(); //snapshot.val()에 user 테이블에 있는 해당 개체 정보가 넘어온다. userInfo에 대입!
+            
+            
+            // 첫 번째 모달창
+            // 화면이 렌더링되는 것과 스크립트 처리사이에 시간차
+            $(document).ready(function () {
+              const db = firebase.firestore();
+              let params = new URLSearchParams(document.location.search);
+              let id = params.get("id"); //문자열 "Jonathan"
+              console.log("사용자가 선택한 item.id: " + id);
+              $("#exampleModal").modal("show");
+              const readModal = document.getElementById("exampleModal");
+              readModal.addEventListener("shown.bs.modal", () => {
+                db.collection("QNA")
+                  .doc(id)
+                  .get()
+                  .then((result) => {
+                    // console.log(result.data());
+                    if(user.uid == result.data().uid){
+                      const subject = result.data().subject;
+                      $("#exampleModalLabel").text(subject);
+                      const writer = result.data().writer;
+                      $("#writer").text(writer);
+                      const write_date = result.data().write_date;
+                      $("#write_date").text(write_date);
+                      const content = result.data().content;
+                      $("#content").text(content);
+                      console.log("uid가 일치합니다.");
+                    } else {
+                            alert("접근할 수 없는 페이지입니다.");
+                            history.back();
+                            return false;
+                    }
+                  });
+              });
+            });
             return true;
       });
     } else {
@@ -62,6 +100,7 @@ function userSessionCheck() {
 }
 
 
+// 두번째 모달창
 // 화면이 렌더링되는 것과 스크립트 처리사이에 시간차
 $(document).ready(function () {
   //수정하기하면 화면에 값이 보여지고 제목과 내용은 인풋으로 보여지기
@@ -75,7 +114,7 @@ $(document).ready(function () {
     $("#exampleModalToggle").modal("show");
     const readModal2 = document.getElementById("exampleModalToggle");
     readModal2.addEventListener("shown.bs.modal", () => {
-      db.collection("ntc")
+      db.collection("QNA")
         .doc(id)
         .get()
         .then((result) => {

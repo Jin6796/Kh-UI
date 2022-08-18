@@ -42,7 +42,6 @@ function userSessionCheck() {
           });
         });
         document.getElementById("username").textContent = user.displayName + " 님";
-        
         ////////////////////////정보가져오기 추가///////////////////////////////
         const docRef = db.collection("user").doc(user.uid);
         docRef.get().then((doc) => {
@@ -51,8 +50,7 @@ function userSessionCheck() {
             document.getElementById("user_name").textContent = "이름: "+ doc.data().Name;
             document.getElementById("user_id").textContent = "아이디: "+ doc.data().email;
             document.getElementById("user_phone").textContent = "전화번호: "+ doc.data().phoneNumber;
-            document.getElementById("user_pw").textContent = "비밀번호: "+ doc.data().password;
-            // document.getElementById("user_level").textContent = "레벨: "+ doc.data().level;
+            document.getElementById("user_gender").textContent = "성별: "+ doc.data().gender;
             if(doc.data().level > 1){
               document.getElementById("user_level").textContent = "등급: 관리자"
             } else {
@@ -67,7 +65,6 @@ function userSessionCheck() {
           console.log("Error getting document:", error);
         });
         ////////////////////////정보가져오기 추가///////////////////////////////
-        
         /////////////////////////스토리지 사진 정보/////////////////////////////////////
         let storageRef = firebase.storage().ref('image');
         storageRef.child('jkcat.png').getDownloadURL().then( url =>{
@@ -116,8 +113,8 @@ function userSessionCheck() {
         function searchList() {
           ///////////////////=========================추가=======================================////////////////
           //==================== 페이징 처리에 필요한 변수 선언//////////////////////////
-          db.collection("ntc")
-            .where("writer", "==", "관리자")
+          db.collection("QNA")
+            .where("uid", "==", user.uid)
             .get()
             .then((snapshot) => { // 콜백영역 - callback 함수
               total = snapshot.docs.length;
@@ -135,6 +132,14 @@ function userSessionCheck() {
             })/////end of callback
         }//end of searchList()
         /* *************************1:1 문의 목록 불러오기   끝************************************ */
+        /* 목록보기들 버튼 누를 때 */
+        document.getElementById('purchase').addEventListener('click',()=>{
+          window.location = "purchaseModal.html";
+        })
+        document.getElementById('lecture').addEventListener('click',()=>{
+          window.location = "myLectureModal.html";
+        })
+        /* 목록보기들 버튼 누를 때 */
         return true
       });
     } else {

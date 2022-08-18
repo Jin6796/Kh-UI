@@ -28,69 +28,69 @@
       @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Ruda&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Dosis&display=swap');
     </style>
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-          }
-          
-          @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-              font-size: 3.5rem;
-            }
-          }
-          
-          .b-example-divider {
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-          }
-          
-          .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-          }
-          
-          .bi {
-            vertical-align: -.125em;
-            fill: currentColor;
-          }
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+      
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+      
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
 
-          .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
-          }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
 
-          .nav-scroller .nav {
-            display: flex;
-            flex-wrap: nowrap;
-            padding-bottom: 1rem;
-            margin-top: -1px;
-            overflow-x: auto;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-          }
-          /* 상세보기 버튼 */
-          .btn.btn-primary.btn-sm {
-            margin: auto;
-            width: 5rem;
-            height: 2rem;
-          }
-          /* 지점 목록 이름과 버튼 간격 */
-          .list-group-branch {
-            display: flex;
-            justify-content: space-between;
-          }
-    </style>
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      /* 상세보기 버튼 */
+      .btn.btn-primary.btn-sm {
+        margin: auto;
+        width: 5rem;
+        height: 2rem;
+      }
+      /* 지점 목록 이름과 버튼 간격 */
+      .list-group-branch {
+        display: flex;
+        justify-content: space-between;
+      }
+      </style>
     <!-- Custom styles for this template -->
     <script src="./mypage.js" defer></script>
     <link rel="stylesheet" href="./mypage.css">
@@ -187,7 +187,7 @@
                 <span id="user_name"></span><br>
                 <span id="user_phone"></span><br>
                 <span id="user_id"></span><br>
-                <span id="user_pw"></span><br>
+                <span id="user_gender"></span><br>
                 <span id="user_level"></span><br>
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -227,7 +227,7 @@
             <p class="card-text">내 강좌</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">목록확인</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" id="lecture">목록확인</button>
               </div>
             </div>
           </div>
@@ -240,32 +240,31 @@
             <p class="card-text">구매내역</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">목록확인</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" id="purchase">목록확인</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- -----------------------------------------------1:1 문의------------------------------------- -->
+    <div>
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid" style="margin-top: 2rem;">
+          <h2 class="navbar-brand2">📌1:1 문의 목록📌</h2>
+        </div>
+      </div>
+    </nav>
+    <!-- 이 밑으로 지점들 목록 나오깅 -->
+      <div class="list-group" >
+      </div>
+    </div>
+    <!-- -----------------------------------------------1:1 문의------------------------------------- -->
   </div>
 </div>
 <!-- ---------------------------몸통부분---------------------------- -->
-<!-- 1:1 문의는 밑에다 빼버림 -->
 <hr class="featurette-divider" style="border: 1px solid #aaaaaa;">
-<!-- -----------------------------------------------1:1 문의------------------------------------- -->
-<div>
-  <!-- navbar -->
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <h2 class="navbar-brand">1:1 문의 목록</h2>
-      </div>
-    </div>
-  </nav>
-  <!-- 이 밑으로 지점들 목록 나오깅 -->
-    <div class="list-group">
-    </div>
-</div>
-<!-- -----------------------------------------------1:1 문의------------------------------------- -->
 <footer class="footer">
   <div class="footer_container">
     <div class="icons">

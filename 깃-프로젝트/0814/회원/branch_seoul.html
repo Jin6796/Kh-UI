@@ -7,8 +7,7 @@
   <title>GYM</title>
   <!-- 아이콘 fontawesome -->
   <script src="https://kit.fontawesome.com/afb658d092.js" crossorigin="anonymous"></script>
-  <!-- 구글 폰트 -->
-  <style>
+  <style> /* 영어폰트 -구글 */
     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Dosis&family=Nanum+Gothic&family=Ubuntu:wght@300&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Ruda&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Dosis&display=swap');
@@ -22,6 +21,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script src="./branch.js" defer></script>
   <link rel="stylesheet" href="./branch.css">
+
 </head>
 <body>
   <!-- 파베 때매 추가한 부분 -->
@@ -153,18 +153,50 @@ $(window).on('resize', function() {
 // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
 let zoomControl = new kakao.maps.ZoomControl();
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+	// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+	// marker.setMap(null);
   // 클릭시 줌 컨트롤이 이중으로 나오는 것을 방지함
 	if(click == 1){
 		jQuery("html, body").animate({ scrollTop: 670 }, 500, "")	
     map.removeControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
   }
-
 }
 initMap('37.49901672299171','127.03286906698669',0);
+///////////////////////////추가////////////////////////
+
+/* daum.maps.event.addListener(map, 'drag', function (event) {
+  var markerPosition = marker.getPosition(); 
+  map.relayout();
+  map.setCenter(markerPosition);
+}); */
+
+	// 마커가 지도 위에 표시되도록 설정합니다
+// marker.setMap(map);
+
+	// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+	// marker.setMap(null);
 	if(click == 1){
 		jQuery("html, body").animate({ scrollTop: 670 }, 500, "")	}
 
 initMap('37.49901672299171','127.03286906698669',0);
+///////////////////////////추가////////////////////////
+
+
+
+/* daum.maps.event.addListener(map, 'drag', function (event) {
+  var markerPosition = marker.getPosition(); 
+  map.relayout();
+  map.setCenter(markerPosition);
+}); */
+
+            // // 마커를 생성합니다
+            // const marker = new kakao.maps.Marker({
+            //     position: markerPosition
+            // });
+
+            // // 마커가 지도 위에 표시되도록 설정합니다
+            // marker.setMap(map);
             </script>
         <!-- ///////////////////////////////////////카카오맵 끝//////////////////////////////////////// -->
         </div>
@@ -181,16 +213,38 @@ initMap('37.49901672299171','127.03286906698669',0);
               </ul>
             </div>
           </div>
+<!--           검색추가
+          <div class="input-group rounded">
+            <input type="search" class="form-control rounded" placeholder="지점명을 검색하세요" aria-label="Search" aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="fas fa-search"></i>
+            </span>
+          </div> -->
+          <!-- 여기서부터 검색하고 난 목록 -->
           <div>
             <!-- 부트스트랩에서 따온 것..  navbar 복붙함 -->
             <nav class="navbar navbar-expand-lg bg-light">
-              <div class="container-fluid" id="bbb_list">
+              <div class="container-fluid">
                 <h3 id="branch_list">지점 목록</h3>
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        --선택하세요--
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">전체</a></li>
+                        <li><a class="dropdown-item">서울</a></li>
+                        <li><a class="dropdown-item">경기</a></li>
+                      </ul>
+                    </li>
+                  </ul> -->
                   <form class="d-flex" role="search">
                     <input id="search_value" class="form-control me-4" type="text" placeholder="지점명을 입력해주세요." aria-label="Search">
-                    <button class="btn btn-outline-primary" type="button" id="search_btn"
-                    style="border: 1px solid rgba(52, 52, 185, 0.575); color: rgba(52, 52, 185, 0.575);">
-                    Search</button>
+                    <button class="btn btn-outline-primary" type="button">Search</button>
                   </form>
                 </div>
               </div>
@@ -200,59 +254,31 @@ initMap('37.49901672299171','127.03286906698669',0);
               <div class="list-group">
                 <div class="list-group-branch">
                   <a href="#" class="list-group-item list-group-item-action">강남역점</a> 
-                  <button type="button" id="btn_detail_kn" class="btn btn-primary btn-sm">상세보기</button>
+                  <button type="button" class="btn btn-primary btn-sm">상세보기</button>
                 </div>
                 <div class="list-group-branch">
                   <a class="list-group-item list-group-item-action">시청점</a>
-                  <button type="button" id="btn_detail_ch" class="btn btn-primary btn-sm">상세보기</button>
+                  <button type="button" class="btn btn-primary btn-sm">상세보기</button>
                 </div>
                 <div class="list-group-branch">
                   <a href="#" class="list-group-item list-group-item-action">압구정점</a>
-                  <button type="button" id="btn_detail_ag" class="btn btn-primary btn-sm">상세보기</button>
+                  <button type="button" class="btn btn-primary btn-sm">상세보기</button>
                 </div>
                 <div class="list-group-branch">
                   <a class="list-group-item list-group-item-action">여의도점</a>
-                  <button type="button" id="btn_detail_yd" class="btn btn-primary btn-sm">상세보기</button>
+                  <button type="button" class="btn btn-primary btn-sm">상세보기</button>
                 </div>
                 <div class="list-group-branch">
                   <a href="#" onclick="initMap(37.49901672299171, 127.03286906698669,1)" class="list-group-item list-group-item-action">역삼점</a>
-                  <button type="button" id="btn_detail_ys" class="btn btn-primary btn-sm">상세보기</button>
+                  <button type="button" class="btn btn-primary btn-sm">상세보기</button>
                 </div>
                 <div class="list-group-branch">
                   <a class="list-group-item list-group-item-action">잠실점</a>
-                  <button type="button" id="btn_detail_js" class="btn btn-primary btn-sm">상세보기</button>
+                  <button type="button" class="btn btn-primary btn-sm">상세보기</button>
                 </div>
                 <div class="list-group-branch">
                   <a href="#" onclick="initMap(37.56793314966106, 126.98311171681054,1)" class="list-group-item list-group-item-action">종로점</a>
-                  <button type="button" id="btn_detail_jr" class="btn btn-primary btn-sm">상세보기</button>
-                </div>
-                <div class="list-group-branch">
-                  <a class="list-group-item list-group-item-action">일산점</a>
-                  <button type="button" id="btn_detail_is" class="btn btn-primary btn-sm">상세보기</button>
-                </div>
-                <div class="list-group-branch">
-                  <a class="list-group-item list-group-item-action">부천역점</a>
-                  <button type="button" id="btn_detail_bc" class="btn btn-primary btn-sm">상세보기</button>
-                </div>
-                <div class="list-group-branch">
-                  <a href="#" onclick="initMap(37.32254941546262,127.09569660469833,1)" class="list-group-item list-group-item-action">용인수지점</a>
-                  <button type="button" id="btn_detail_yis" class="btn btn-primary btn-sm">상세보기</button>
-                </div>
-                <div class="list-group-branch">
-                  <a class="list-group-item list-group-item-action">판교점</a>
-                  <button type="button" id="btn_detail_pg" class="btn btn-primary btn-sm">상세보기</button>
-                </div>
-                <div class="list-group-branch">
-                  <a href="#" onclick="initMap(37.267444542367585, 127.0043067027139,1)" class="list-group-item list-group-item-action">수원역점</a>
-                  <button type="button" id="btn_detail_sw" class="btn btn-primary btn-sm">상세보기</button>
-                </div>
-                <div class="list-group-branch">
-                  <a class="list-group-item list-group-item-action">동탄점</a>
-                  <button type="button" id="btn_detail_dt" class="btn btn-primary btn-sm">상세보기</button>
-                </div>
-                <div class="list-group-branch">
-                  <a class="list-group-item list-group-item-action">하남점</a>
-                  <button type="button" id="btn_detail_hn" class="btn btn-primary btn-sm">상세보기</button>
+                  <button type="button" class="btn btn-primary btn-sm">상세보기</button>
                 </div>
               </div>
           </div>

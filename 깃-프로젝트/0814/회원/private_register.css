@@ -155,78 +155,33 @@ body {
   margin-left: 1rem;
 }
 
-#branch_list {
-  color: rgba(52, 52, 185, 0.575);
+.text-primary{
+  font-size: larger;
   font-weight: bold;
-  margin: auto;
-  margin-left: 0%;
+  margin-bottom: 1rem;
 }
 
-#bbb_list{
-  margin: 1rem;
+.mb-4{
+  color:black; 
 }
 
-.map_box{
-  align-items: center;
-}
-
-.map_bottom{
-  max-width: 700px;
-  align-items: center;
-}
-
-.btn-sm {
-  border: 1px solid rgba(35, 35, 160, 0.973);
-  background-color: rgba(52, 52, 185, 0.575);
-}
-
-
-.tag {
-  text-align: center;
-}
-
-.taglist {
-  display: inline-block;
-  margin-top: 53px;
-  line-height: 1.6;
-}
-
-.taglist a{
-  color: rgba(52, 52, 185, 0.575);
+.mb-3 {
+  color:black; 
   font-weight: bold;
-  font-weight: bold;
+  margin-top: 1rem;
 }
 
-.taglist-item {
-  float: left;
-  margin-right: 15px;
-  font-size: 20px;
-}
-
-#search_btn:hover{
-  background-color: rgba(52, 52, 185, 0.575);
-  font-weight: bold;
-}
-
-/* 상세보기 버튼 */
-.btn.btn-primary.btn-sm {
-  margin: auto;
-  width: 5rem;
-  height: 2rem;
-}
-
-/* 지점 목록 이름과 버튼 간격 */
-.list-group-branch {
-  display: flex;
+.mb-2{
+  color:black; 
 }
 
 .service-item {
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.24);
 }
 
-.img-fluid{
+/* .img-fluid{
   box-shadow: 0px 0px 10px 1px rgb(57, 54, 70);
-}
+} */
 
 .footer_container{
   padding: 1% 2.5%;
@@ -251,4 +206,132 @@ body {
 
 .icon{
   margin: 0.3rem;
+}
+
+
+/*////////////////// main css 추가 ///////////////*/
+
+.register_h1 {
+  color: black;
+}
+
+.upload_img {
+  display: grid;
+  margin-bottom: 50px;
+/*   text-align: center;
+  align-items: center; */
+}
+
+#class_img {
+  width: 70%;
+  margin: 2rem auto;
+  border: 5px solid lightgray;
+}
+
+.input-group {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.reservation_class {
+  /* padding-top: 20px; */
+  padding: 15px 80px 80px 80px;
+  /* padding: 30px; */
+  display: flex;
+  text-align: center;
+  /* justify-content: space-between; */
+}
+
+.reservation_table {
+  font-size: 1.3rem;
+/*   background-color: rgb(225, 244, 250); */
+}
+
+.date {
+  color: black;
+}
+
+.header_register {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  padding: auto;
+}
+
+#header_res_btn {
+  background-color: midnightblue;
+  font-weight: bold;
+  border: none;
+}
+
+table {
+  width: 100%;
+  /* border-top: 1px solid #444444; */
+  border-collapse: collapse;
+  color: black;
+}
+
+#table_header {
+  color: white;
+  /* border-bottom: 1.5px solid lightgray; */
+  background-color: midnightblue;
+}
+
+#name_select_view {
+  width: 64%;
+  margin: 0 auto;
+}
+
+th {
+  padding: 10px;
+}
+
+td {
+  border-bottom: 1px solid lightgray;
+  padding: 10px;
+}
+
+#date_search_dv {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#date_keyword {
+  width: 30%;
+}
+
+.btn.btn-dark {
+  color: black;
+  font-size: 1.3rem;
+  /* font-weight: bold; */
+  background-color: lightgray;
+  border: none;
+}
+
+#exampleModalLabel {
+  color: black;
+}
+
+.form-floating {
+  margin: 1rem;
+}
+
+#class_date_div, #class_lecturer_div {
+  display: flex;
+}
+
+#class_date {
+  width: 50%;
+  margin: 0 10px;
+}
+
+#class_lecturer {
+  width: 30%;
+  margin: 0 10px;
+}
+
+#modal_body_res {
+  font-size: 1.4rem;
+  align-items: center;
+  text-align: center;
 }

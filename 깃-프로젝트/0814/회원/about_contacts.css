@@ -155,69 +155,24 @@ body {
   margin-left: 1rem;
 }
 
-#branch_list {
-  color: rgba(52, 52, 185, 0.575);
+.text-primary{
+  font-size: larger;
   font-weight: bold;
-  margin: auto;
-  margin-left: 0%;
+  margin-bottom: 1rem;
 }
 
-#bbb_list{
-  margin: 1rem;
+.mb-4{
+  color:black; 
 }
 
-.map_box{
-  align-items: center;
-}
-
-.map_bottom{
-  max-width: 700px;
-  align-items: center;
-}
-
-.btn-sm {
-  border: 1px solid rgba(35, 35, 160, 0.973);
-  background-color: rgba(52, 52, 185, 0.575);
-}
-
-
-.tag {
-  text-align: center;
-}
-
-.taglist {
-  display: inline-block;
-  margin-top: 53px;
-  line-height: 1.6;
-}
-
-.taglist a{
-  color: rgba(52, 52, 185, 0.575);
+.mb-3 {
+  color:black; 
   font-weight: bold;
-  font-weight: bold;
+  margin-top: 1rem;
 }
 
-.taglist-item {
-  float: left;
-  margin-right: 15px;
-  font-size: 20px;
-}
-
-#search_btn:hover{
-  background-color: rgba(52, 52, 185, 0.575);
-  font-weight: bold;
-}
-
-/* 상세보기 버튼 */
-.btn.btn-primary.btn-sm {
-  margin: auto;
-  width: 5rem;
-  height: 2rem;
-}
-
-/* 지점 목록 이름과 버튼 간격 */
-.list-group-branch {
-  display: flex;
+.mb-2{
+  color:black; 
 }
 
 .service-item {
@@ -251,4 +206,17 @@ body {
 
 .icon{
   margin: 0.3rem;
+}
+
+.contact_us {
+  padding: auto;
+  font-size: 20px;
+}
+
+.contact_us_text {
+  margin: 0.4rem 0rem;
+}
+
+.contact_us_text{
+  color: black;
 }

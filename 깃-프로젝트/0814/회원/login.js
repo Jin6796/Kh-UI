@@ -28,7 +28,6 @@ $(document).ready(function(){
     //제이쿼리 선택자와 val() 함수를 이용해서 이메일,비밀번호 값을 가져온다. 
     const email = $('#email').val();
     const password = $('#password').val();
-    alert("로그인 버튼 눌렸음" + email +":"+ password);
 
     //파이어베이스 이메일 로그인 함수
     firebaseEmailAuth.signInWithEmailAndPassword(email, password)

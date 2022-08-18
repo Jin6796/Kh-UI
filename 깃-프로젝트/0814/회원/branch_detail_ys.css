@@ -158,28 +158,7 @@ body {
 #branch_list {
   color: rgba(52, 52, 185, 0.575);
   font-weight: bold;
-  margin: auto;
-  margin-left: 0%;
 }
-
-#bbb_list{
-  margin: 1rem;
-}
-
-.map_box{
-  align-items: center;
-}
-
-.map_bottom{
-  max-width: 700px;
-  align-items: center;
-}
-
-.btn-sm {
-  border: 1px solid rgba(35, 35, 160, 0.973);
-  background-color: rgba(52, 52, 185, 0.575);
-}
-
 
 .tag {
   text-align: center;
@@ -203,9 +182,44 @@ body {
   font-size: 20px;
 }
 
-#search_btn:hover{
-  background-color: rgba(52, 52, 185, 0.575);
+.branch_title{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.branch_title h1{
+  color: rgb(36, 1, 189);
   font-weight: bold;
+}
+
+.intro_branch_detail_info{
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0.8rem; */
+}
+
+.card-body h3{
+  color: black;
+}
+
+.album {
+  padding-top: 0px;
+}
+
+.card-text {
+  color: black;
+}
+
+.intro_branch_detail {
+  margin-bottom: 3rem;
+}
+
+.table.table-borderless{
+  width: 50%;
+  margin: auto;
+  font-size: 1rem;
+  margin-left: 1rem;
 }
 
 /* 상세보기 버튼 */
@@ -214,17 +228,17 @@ body {
   width: 5rem;
   height: 2rem;
 }
-
 /* 지점 목록 이름과 버튼 간격 */
 .list-group-branch {
   display: flex;
+  justify-content: space-between;
 }
 
 .service-item {
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.24);
 }
 
-.img-fluid{
+.card{
   box-shadow: 0px 0px 10px 1px rgb(57, 54, 70);
 }
 
