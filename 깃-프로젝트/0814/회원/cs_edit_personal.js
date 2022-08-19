@@ -35,16 +35,14 @@ function userSessionCheck() {
                 if(doc.data().level > 1){
                   const hidden1 = document.querySelector("#modifying-btn");
                   const hidden2 = document.querySelector("#delete_complete");
-                  hidden1.style.cssText =""
-                  hidden2.style.cssText =""
-                  // console.log("user.uid: " + user.uid);
+                  hidden1.style.cssText ="";
+                  hidden2.style.cssText ="";
                   console.log("관리자 계정 확인, 숨겨진 버튼 보여줄게");
                 } else if(doc.data().level == 1){
                   const hidden1 = document.querySelector("#modifying-btn");
                   const hidden2 = document.querySelector("#delete_complete");
-                  hidden1.style.cssText =""
-                  hidden2.style.cssText =""
-                  // console.log("user.uid: " + user.uid);
+                  hidden1.style.cssText ="";
+                  hidden2.style.cssText ="";
                   console.log("회원 계정 확인, 숨겨진 버튼 보여줄게");
                   
                 } else console.log("비회원 확인");
@@ -64,7 +62,7 @@ function userSessionCheck() {
               const db = firebase.firestore();
               let params = new URLSearchParams(document.location.search);
               let id = params.get("id"); //문자열 "Jonathan"
-              console.log("사용자가 선택한 item.id: " + id);
+              // console.log("사용자가 선택한 item.id: " + id);
               $("#exampleModal").modal("show");
               const readModal = document.getElementById("exampleModal");
               readModal.addEventListener("shown.bs.modal", () => {
@@ -83,6 +81,16 @@ function userSessionCheck() {
                       const content = result.data().content;
                       $("#content").text(content);
                       console.log("uid가 일치합니다.");
+                    } else if (user.uid === "PEpN5J2VmjQLBy9NmvhHM6xox4r2"){
+                      const subject = result.data().subject;
+                      $("#exampleModalLabel").text(subject);
+                      const writer = result.data().writer;
+                      $("#writer").text(writer);
+                      const write_date = result.data().write_date;
+                      $("#write_date").text(write_date);
+                      const content = result.data().content;
+                      $("#content").text(content);
+                      console.log("관리자 접근, 데이터 공개");
                     } else {
                             alert("접근할 수 없는 페이지입니다.");
                             history.back();
@@ -94,6 +102,8 @@ function userSessionCheck() {
             return true;
       });
     } else {
+      alert("접근 권한이 없는 페이지입니다.");
+      history.back();
       return false;
     }
   });
@@ -132,6 +142,8 @@ $(document).ready(function () {
     });
   };
 });
+
+
 // 수정완료버튼
 $(document).ready(function () {
   document.getElementById("modify_complete").onclick = () => {
@@ -141,7 +153,7 @@ $(document).ready(function () {
     //모달2도 모달1과 같은 url이라 똑같이 가져옴
     let id = params.get("id");
     console.log(id);
-    const moRef = db.collection("ntc").doc(id);
+    const moRef = db.collection("QNA").doc(id);
     // 파이어베이스는 수정하는 항목을 따로 지정해주어야함
     // 일단 타이틀이랑 내용만 수정할 수 있게 해둠
     return moRef
@@ -157,6 +169,7 @@ $(document).ready(function () {
         // The document probably doesn't exist.
         console.error("Error updating document: ", error);
       });
+      
   };
 });
 
@@ -170,7 +183,7 @@ $(document).ready(function () {
     let id = params.get("id");
     console.log(id);
     //파이어베이스 삭제는 .delete()만 추가하면 됨 짱
-    db.collection("ntc")
+    db.collection("QNA")
       .doc(id)
       .delete()
       .then(() => {
@@ -179,6 +192,9 @@ $(document).ready(function () {
       .catch((error) => {
         console.error("Error removing document: ", error);
       });
+      setTimeout(function () {
+        window.location = "cs_notice.html";
+      }, 100);
   };
 });
 
@@ -192,6 +208,6 @@ $(document).ready(function () {
 
   document.getElementById("mo1-close").onclick = () => {
     console.log("버튼 누르고 첫창 넘어왔나요?");
-    location.href = "cs_notice.html";
+    history.back();
   };
 });

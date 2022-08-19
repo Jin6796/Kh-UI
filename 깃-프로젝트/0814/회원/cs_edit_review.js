@@ -73,7 +73,7 @@ $(document).ready(function () {
         .doc(id)
         .get()
         .then((result) => {
-          console.log(result.data());
+          // console.log(result.data());
           //인풋이기 때문에 밸류값으로 가져옴, content도 동일
           const subject = result.data().subject;
           $("#input-title2").val(subject);
@@ -147,6 +147,6 @@ $(document).ready(function () {
 
   document.getElementById("mo1-close").onclick = () => {
     console.log("버튼 누르고 첫창 넘어왔나요?");
-    location.href = "cs_notice.html";
+    history.back();
   };
 });

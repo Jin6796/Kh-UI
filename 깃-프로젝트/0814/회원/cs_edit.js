@@ -149,6 +149,6 @@ $(document).ready(function () {
 
   document.getElementById("mo1-close").onclick = () => {
     console.log("버튼 누르고 첫창 넘어왔나요?");
-    location.href = "cs_notice.html";
+    history.back();
   };
 });
