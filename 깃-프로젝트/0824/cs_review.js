@@ -223,8 +223,8 @@ function dbtable() {
 
         const template = `
           <tr>
-              <th style="width: 10%" scope="row">${++num}</th>
-              <td style="width: 40%"><a class="cs_title" href="./cs_edit_review.html?id=${
+              <th style="width: 5%" scope="row">${++num}</th>
+              <td style="width: 5rem"><a class="cs_title" href="./cs_edit_review.html?id=${
                 snapshot.docs[i].id
               }">
                 ${snapshot.docs[i].data().subject}
@@ -251,7 +251,7 @@ function searchList() {
   console.log("검색리스트에 도착했나요?");
   const choice = $("#gubun option:selected").val();
   const user_search = $("#keyword").val();
-  alert("검색" + choice + user_search);
+  // alert("검색" + choice + user_search);
   let num = 0;
   let total = 0;
   let numPerPage = 3;
@@ -283,8 +283,8 @@ function searchList() {
         // 코드양은 늘어나더라도(DOM Tree구조는 잘 보임) 복잡도 증가하지 않도록
         const template = `
             <tr>
-              <th style="width: 10%" scope="row">${++num}</th>
-              <td style="width: 40%"><a class="cs_title" href="./cs_edit_review.html?id=${
+              <th style="width: 5%" scope="row">${++num}</th>
+              <td style="width: 5rem"><a class="cs_title" href="./cs_edit_review.html?id=${
                 snapshot.docs[i].id
               }">
                 ${snapshot.docs[i].data().subject}

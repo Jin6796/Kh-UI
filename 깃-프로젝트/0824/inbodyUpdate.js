@@ -58,7 +58,7 @@ function userSessionCheck() {
     $("#register").click(function(){
       const file = document.querySelector("#inbody").files[0];
       const storageRef = storage.ref();
-      const storagePath = storageRef.child("image/" + "인바디" + user.displayName + "_" + Date() + "_" +  file.name);
+      const storagePath = storageRef.child("image/" + "인바디_" + user.displayName + "_" + Date() + "_" +  file.name);
       const uploadImg = storagePath.put(file);
       const write_date = date.toLocaleString("ko-kr");
 

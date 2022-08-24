@@ -143,6 +143,10 @@ body {
   font-weight: bold;
 }
 
+.header_right a:hover{
+  color: white;
+}
+
 .navbar {
   padding: 0px;
 }

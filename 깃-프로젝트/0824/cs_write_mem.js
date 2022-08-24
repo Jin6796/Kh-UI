@@ -106,7 +106,7 @@ function userSessionCheck() {
       } else {
         const file = document.querySelector("#image").files[0];
         const storageRef = storage.ref();
-        const storagePath = storageRef.child("image/" + "후기" + user.displayName + "_" + date + "_" +  file.name);
+        const storagePath = storageRef.child("image/" + "후기_" + user.displayName + "_" + date + "_" +  file.name);
         const uploadImg = storagePath.put(file);
         uploadImg.on(
           "state_change",

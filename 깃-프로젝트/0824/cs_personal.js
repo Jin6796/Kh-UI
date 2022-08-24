@@ -219,14 +219,14 @@ function dbtable() {
 
         const template = `
           <tr>
-              <th style="width: 10%" scope="row">${++num}</th>
+              <th style="width: 5%" scope="row">${++num}</th>
               // 수정으로 넘어가게 하는 모달창임 수정 없는 모달창은 그냥 cs-modal로
-              <td style="width: 40%"><a class="cs_title" href="./cs_edit_personal.html?id=${
+              <td style="width: 5rem"><a class="cs_title" href="./cs_edit_personal.html?id=${
                 snapshot.docs[i].id
               }">
                 ${snapshot.docs[i].data().subject}
               </a></td>
-              <td style="width: 20%">${snapshot.docs[i].data().writer}</td>
+              <td style="width: 10%">${snapshot.docs[i].data().writer}</td>
               <td class="write_d" style="width: 20%">${
                 snapshot.docs[i].data().write_date
               }</td>
@@ -248,7 +248,7 @@ function searchList() {
   $("tbody").empty();
   const choice = $("#gubun option:selected").val();
   const user_search = $("#keyword").val();
-  alert("검색" + choice + user_search);
+  // alert("검색" + choice + user_search);
   let num = 0;
   let total = 0;
   let numPerPage = 3;
@@ -274,14 +274,14 @@ function searchList() {
         // 코드양은 늘어나더라도(DOM Tree구조는 잘 보임) 복잡도 증가하지 않도록
         const template = `
             <tr>
-            <th style="width: 10%" scope="row">${++num}</th>
+            <th style="width: 5%" scope="row">${++num}</th>
             // 수정으로 넘어가게 하는 모달창임 수정 없는 모달창은 그냥 cs-modal로
-            <td style="width: 40%"><a class="cs_title" href="./cs_edit_personal.html?id=${
+            <td style="width: 5rem"><a class="cs_title" href="./cs_edit_personal.html?id=${
               snapshot.docs[i].id
             }">
               ${snapshot.docs[i].data().subject}
             </a></td>
-            <td style="width: 20%">${snapshot.docs[i].data().writer}</td>
+            <td style="width: 10%">${snapshot.docs[i].data().writer}</td>
             <td class="write_d" style="width: 20%">${
               snapshot.docs[i].data().write_date
             }</td>

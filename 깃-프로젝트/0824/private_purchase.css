@@ -135,6 +135,10 @@
   .header_right button:hover {
     font-weight: bold;
   }
+
+  .header_right a:hover{
+    color: white;
+  }
   
   .navbar {
     padding: 0px;
@@ -280,10 +284,10 @@
   display: flex;
 }
 
-#user_name{
+/* #user_name{
   width: 23%;
   margin-left: 10px;
-}
+} */
 
 .btn_ph {
   min-width: max-content;

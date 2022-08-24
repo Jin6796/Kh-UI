@@ -248,7 +248,7 @@ function searchList() {
   $("tbody").empty();
   const choice = $("#gubun option:selected").val();
   const user_search = $("#keyword").val();
-  alert("검색" + choice + user_search);
+  // alert("검색" + choice + user_search);
   let num = 0;
   let total = 0;
   let numPerPage = 10;

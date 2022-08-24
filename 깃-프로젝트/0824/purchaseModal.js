@@ -41,7 +41,7 @@ function userSessionCheck() {
                 const p_date = doc.data().purchase_date;
                 const template = `
                 <h4 style="color: slateblue;"> <${++num} 번째 구매내역></h4>
-                <label>회원명:  </label>
+                <label></label>
                 <span>${user_name}</span>
                 <br>
                 <label>지점명: </label>

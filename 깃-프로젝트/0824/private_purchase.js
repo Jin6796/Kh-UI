@@ -74,6 +74,11 @@ function userSessionCheck() {
         if(item.id == e.target.id){
             document.getElementById("p_name").textContent = "이용권 이름 : " + p_name;
             document.getElementById("price").textContent = "가격 : " + price;
+            const docRef = db.collection("user").doc(user.uid);
+            docRef.get().then((result)=>{
+                const user_name = result.data().Name;
+                document.getElementById("user_name").textContent = "회원명 : "+user_name;
+            })
         }
     })
 
@@ -90,7 +95,7 @@ document.getElementById('purchase_btn').addEventListener('click',(e) => {
         const duration_start = $("#duration_start").val(); // 이용 시작 기간
         const duration_end = $("#duration_end").val(); // 이용 끝 기간
         let payment = $('input[name=inlineRadioOptions]:checked').val(); // 결제수단
-        const user_name = $("#user_name").val(); // 회원이름
+        const user_name = $("#user_name").text(); // 회원이름
         let p_branch = $(".form-select").val(); // 이용 지점
 
             db.collection("purchase").add({

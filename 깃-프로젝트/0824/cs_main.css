@@ -46,10 +46,6 @@ a {
   color: white;
 }
 
-.header_right a:hover{
-  color: white;
-}
-
 body {
   background: linear-gradient(to right, rgb(14, 1, 71), rgb(36, 1, 189));
   /* background-color: rgb(14, 1, 71); */
@@ -148,6 +144,10 @@ body {
 
 .header_right button:hover {
   font-weight: bold;
+}
+
+.header_right a:hover{
+  color: white;
 }
 
 .navbar {
