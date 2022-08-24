@@ -72,12 +72,12 @@ function userSessionCheck() {
     document.getElementById(item.id).addEventListener('click', (e) => {
         // console.log(e.target.id);
         if(item.id == e.target.id){
-            document.getElementById("p_name").textContent = "이용권 이름 : " + p_name;
-            document.getElementById("price").textContent = "가격 : " + price;
+            document.getElementById("p_name").textContent = p_name;
+            document.getElementById("price").textContent = price;
             const docRef = db.collection("user").doc(user.uid);
             docRef.get().then((result)=>{
                 const user_name = result.data().Name;
-                document.getElementById("user_name").textContent = "회원명 : "+user_name;
+                document.getElementById("user_name").textContent = user_name;
             })
         }
     })

@@ -303,3 +303,9 @@
   border-bottom: 2px solid rgb(39, 39, 160);
   padding-bottom: 0.5rem;
 }
+
+#user_name{
+  width: 23%;
+  margin-left: 10px;
+  margin-top: 0.4rem;
+}
