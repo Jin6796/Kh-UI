@@ -48,7 +48,7 @@ $("#register").click(function(){
           Name: Name,
           password: password,
           gender: gender,
-          // 모든 회원은 레벨1을 가진다
+//////////////// 가입 시 무조건 LEVEL 값 1로 부여, 관리자 계정은 따로 직접 레벨 5 부여 ////////////////
           level: 1,
           profile_url: url
         };
@@ -57,7 +57,6 @@ $("#register").click(function(){
           console.log("displayName => "+Name);
         });
         alert('회원가입이 완료되었습니다. \n로그인 후 이용해주세요.');
-        // 회원가입하자마자 로그인 폼으로 넘어가게한다
         setTimeout(() => {
           window.location="login.html";
         }, 1500);

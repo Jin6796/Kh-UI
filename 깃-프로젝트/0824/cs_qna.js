@@ -65,7 +65,7 @@ function userSessionCheck() {
             window.location = "login.html";
           });
 
-          ///////// 로그인한 아이디 레벨 확인, 권한 부여 /////////////
+//////////////////////////***** 로그인한 아이디 레벨 확인, 권한 부여 *****//////////////////////////
           const db = firebase.firestore();
           const docRef = db.collection("user").doc(user.uid);
           docRef
@@ -89,6 +89,8 @@ function userSessionCheck() {
             .catch((error) => {
               console.log("에러 발생: ", error);
             });
+//////////////////////////***** 로그인한 아이디 레벨 확인, 권한 부여 *****//////////////////////////
+
 
           loginUserKey = snapshot.key; //로그인한 유저의 key도 계속 쓸 것이기 때문에 전역변수로 할당
           userInfo = snapshot.val(); //snapshot.val()에 user 테이블에 있는 해당 개체 정보가 넘어온다. userInfo에 대입!

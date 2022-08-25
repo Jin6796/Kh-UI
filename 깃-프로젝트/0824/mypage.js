@@ -57,7 +57,7 @@ function userSessionCheck() {
             } else {
               document.getElementById("user_level").textContent = "등급: 회원"
             }
-            // 사진 정보 가져오기
+            ////////////////////////////**** 사진 정보 가져오기 ****////////////////////////////
             const photo_mini  = `<img src="${doc.data().profile_url}" 
                                       alt="프로필사진" id="img" width="32" height="32" class="rounded-circle">`;
             const photo_large = `<img src="${doc.data().profile_url}" 
@@ -65,6 +65,7 @@ function userSessionCheck() {
                                       style="border-radius: 10px; margin-top: 0.7rem; max-height: 223px;">`;
             $("#mini_profile").append(photo_mini);
             $("#large_profile").append(photo_large);
+            ////////////////////////////**** 사진 정보 가져오기 ****////////////////////////////
 
           } else {
               // doc.data() will be undefined in this case
@@ -73,16 +74,17 @@ function userSessionCheck() {
         }).catch((error) => {
           console.log("Error getting document:", error);
         });
-        ////////////////////////정보가져오기 추가///////////////////////////////
 
         loginUserKey = snapshot.key;  //로그인한 유저의 key도 계속 쓸 것이기 때문에 전역변수로 할당
         userInfo = snapshot.val(); //snapshot.val()에 user 테이블에 있는 해당 개체 정보가 넘어온다. userInfo에 대입!
-        ///////////////// 회원정보수정 모달창 띄우기///////////////////////////////////////////////////////////////////
+
+
+        /////////// 회원정보수정 모달창 띄우기 //////////
         document.getElementById('user_update').addEventListener('click',()=>{
           window.location = "profileModal.html";
         })
-        ///////////////// 회원정보수정 모달창 띄우기///////////////////////////////////////////////////////////////////
-        ///////////////// 회원탈퇴하기///////////////////////////////////////////////////////////////////
+        /////////// 회원정보수정 모달창 띄우기 //////////
+        ///////////////// 회원탈퇴하기 ///////////////////
         document.getElementById("user_delete").addEventListener('click',()=>{
           // 회원탈퇴할 때 먼저 해당 회원의 DB필드 삭제
           const docRef = db.collection("user").doc(user.uid);
@@ -96,8 +98,8 @@ function userSessionCheck() {
             });
           })
         })
-        ///////////////// 회원탈퇴하기///////////////////////////////////////////////////////////////////
-        ///////////////// 인바디 상세조회 모달창 띄우기///////////////////////////////////////////////////////////////////
+        ///////////////// 회원탈퇴하기////////////////////
+        ///////////////// 인바디 상세조회 모달창 띄우기//////////////////
 
         document.getElementById('inbody').addEventListener('click',()=>{
           window.location = "inbodyModal.html";
@@ -105,8 +107,9 @@ function userSessionCheck() {
         document.getElementById('inbody_update').addEventListener('click',()=>{
           window.location = "inbodyUpdate.html";
         })
-        ///////////////// 회원정보수정 모달창 띄우기///////////////////////////////////////////////////////////////////
-        /* *************************1:1 문의 목록 불러오기 시작************************************ */
+        ///////////////// 회원정보수정 모달창 띄우기////////////////////
+
+        //// 1:1 문의 불러오기 시작 ////
         searchList();
         function searchList() {
           let params = new URLSearchParams(document.location.search);
@@ -133,7 +136,8 @@ function userSessionCheck() {
               }////end of for
             })/////end of callback
         }//end of searchList()
-        /* *************************1:1 문의 목록 불러오기   끝************************************ */
+        //// 1:1 문의 불러오기 끝 ////
+
         /* 목록보기들 버튼 누를 때 */
         document.getElementById('purchase').addEventListener('click',()=>{
           window.location = "purchaseModal.html";
